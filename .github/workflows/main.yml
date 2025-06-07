@@ -1,0 +1,22 @@
+name: Build and Deploy to Github Pages
+on:
+  push:
+    branches: [ main ]
+
+
+permissions:
+  contents: write
+  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 获取源码  🛎️
+      uses: actions/checkout@v3
+    - name: 部署 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: dist
+        folder: .
+        clean: true
