@@ -11,7 +11,7 @@
     "vitepress": "^1.6.3"
   },
   "scripts": {
-    "build": "npm run docs:build &&mkdir dist&& cp docs/.vitepress/dist/* dist/docs && cp home/* dist",
+    "build": "npm run docs:build && mkdir -p dist/docs && cp -r docs/.vitepress/dist/* dist/docs && cp -r home/* dist",
     "docs:dev": "npx vitepress dev docs",
     "docs:build": "npx vitepress build docs",
     "docs:serve": "npx vitepress serve docs"
