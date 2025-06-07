@@ -1,0 +1,19 @@
+{
+  "name": "exam_counterattack",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "markdown-it-katex": "^2.0.3",
+    "vite": "^6.3.5",
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "build": "npm run docs:build && cp docs/.vitepress/dist/* dist/docs && cp home/* dist",
+    "docs:dev": "npx vitepress dev docs",
+    "docs:build": "npx vitepress build docs",
+    "docs:serve": "npx vitepress serve docs"
+  }
+}
