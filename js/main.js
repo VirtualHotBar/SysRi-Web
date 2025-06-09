@@ -1,3 +1,7 @@
+if (location.host !== "sysri.cn") {
+    const { pathname, search, hash } = location;
+    location.replace(`https://sysri.cn${pathname}${search}${hash}`);
+}
 
   var _hmt = _hmt || [];
   (function() {
