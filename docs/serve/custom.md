@@ -2,15 +2,15 @@
 
 ## 可选
 
-[装机软件](https://docs.sysri.cn/serve/custom/sysri.html)
+[装机软件](https://sysri.cn/docs/serve/custom/sysri.html)
 
-[WinPE](https://docs.sysri.cn/serve/custom/winpe.html)
+[WinPE](https://sysri.cn/docs/serve/custom/winpe.html)
 
-[Web网站](https://docs.sysri.cn/serve/custom/web.html)
+[Web网站](https://sysri.cn/docs/serve/custom/web.html)
 
-[其他软件](https://docs.sysri.cn/serve/custom/other.html)
+[其他软件](https://sysri.cn/docs/serve/custom/other.html)
 
-[文件直链](https://docs.sysri.cn/serve/custom/directlink.html)
+[文件直链](https://sysri.cn/docs/serve/custom/directlink.html)
 
 ## 联系
 体验软件和清楚需求后，有意愿请找开发者 **VirtualHotBar** 咨询。
