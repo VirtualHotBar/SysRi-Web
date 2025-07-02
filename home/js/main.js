@@ -1,7 +1,7 @@
 if (location.host !== "sysri.cn") {
     const { pathname, search, hash } = location;
     location.replace(`https://sysri.cn${pathname}${search}${hash}`);
-}
+};
 
 document.write("<script>!function(p){\"use strict\";!function(t){var s=window,e=document,i=
 p,c=\"\".concat(\"https:\"===e.location.protocol?\"https://\":\"http://\",\"mxana.tacool.com/zdz.js"),n=e.createElement(\"script\"),
