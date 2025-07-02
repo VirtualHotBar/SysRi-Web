@@ -3,12 +3,18 @@ if (location.host !== "sysri.cn") {
     location.replace(`https://sysri.cn${pathname}${search}${hash}`);
 };
 
-document.write("<script>!function(p){\"use strict\";!function(t){var s=window,e=document,i=
-p,c=\"\".concat(\"https:\"===e.location.protocol?\"https://\":\"http://\",\"mxana.tacool.com/zdz.js"),n=e.createElement(\"script\"),
-r=e.getElementsByTagName(\"script\")[0];n.type=\"text/javascript\",n.setAttribut
-e(\"charset\",\"UTF-8\"),n.async=!0,n.src=c,n.id=\"MXA_COLLECT\",i.d=n;var o=function(){s.MX
-A&&s.MXA.init&&s.MXA.init(i)};n.onload=function(){o()},r.parentNode.insertBefore(n,r)}()}({ id: "c1-DcvmmKgc" });</script>
-");
+(function() {
+    var script = document.createElement('script');
+    script.src = 'https://mxana.tacool.com/sdk.js';
+    script.id = 'MXA_COLLECT';
+    script.async = true;
+    script.onload = function() {
+        if (window.MXA && window.MXA.init) {
+            window.MXA.init({ id: "c1-DcvmmKgc" });
+        }
+    };
+    document.head.appendChild(script);
+})();
 
 
     (function(c,l,a,r,i,t,y){
