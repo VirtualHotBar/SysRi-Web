@@ -4,6 +4,16 @@
         "source": "$wwwhost",
         "destination": "$host",
         "statusCode": 301
+      },
+      {
+        "source": "/Custom/",
+        "destination": "/custom/",
+        "statusCode": 301
+      },
+      {
+        "source": "/QQGroup/",
+        "destination": "/qqgroup/",
+        "statusCode": 301
       }
     ],
   "caches": [
