@@ -12,7 +12,7 @@
       },
       {
         "source": "/QQGroup/",
-        "destination": "/qqgroup/",
+        "destination": "/com-group/",
         "statusCode": 301
       }
     ],
