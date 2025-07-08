@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /Custom
+Allow: /custom/
+Allow: /docs/
+Allow: /com-group/
