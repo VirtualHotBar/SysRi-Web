@@ -20,7 +20,8 @@
   <title>SysRi一键重装 - 一个纯净、强大、易用的系统重装工具</title>
 
   <!-- 修复Font Awesome图标引用 -->
-  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
   <link
     href="https://cdn.iocdn.cc/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@500;600;700&display=swap"
     rel="stylesheet">
@@ -29,7 +30,7 @@
 
   <link rel="stylesheet" href="/css/main.css">
   <script src="/js/main.js"></script>
-  
+
   <style>
     :root {
       --primary: #3B82F6;
@@ -174,7 +175,7 @@
       box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
       display: inline-flex;
       align-items: center;
-      color: white;
+      color: white !important;
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -227,11 +228,14 @@
       text-decoration: none !important;
     }
 
-    .btn-link:hover {
+    .btn-link:hover,
+    .btn-link:focus {
+      /* focus */
       background: var(--primary);
       color: white;
       transform: translateX(5px);
     }
+
 
     .btn-link i {
       margin-right: 6px;
@@ -248,10 +252,12 @@
       transition: var(--transition);
     }
 
-    .btn-outline:hover {
+    .btn-outline:hover,
+    .btn-outline:focus {
       background: var(--primary);
-      color: white;
+      color: white !important;
     }
+
 
     .profile {
       padding: 100px 0 80px;
@@ -569,7 +575,7 @@
             <a class="nav-link" target="_blank" rel="noopener" href="/docs">文档</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-outline ml-2" href="//api.hotpe.top/API/SysRi/GoLink?id=dl">
+            <a class=" btn btn-outline ml-2 nav-link" href="//api.hotpe.top/API/SysRi/GoLink?id=dl">
               <i class="fa fa-download mr-1"></i> 立即下载
             </a>
           </li>
