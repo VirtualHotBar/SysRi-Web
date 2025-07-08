@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme="auto" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SysRi一键重装官方交流群，获取技术支持与使用技巧">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="加入官方交流群 - SysRi一键重装">
+  <meta property="og:url" content="./QQGroup/index.html">
+  <meta property="og:site_name" content="SysRi一键重装">
+  <meta property="og:description" content="加入SysRi官方交流群，获取最新资讯、技术支持和使用技巧">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="/favicon.ico">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/favicon.ico">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <title>加入官方交流群 - SysRi一键重装</title>
+
+  <!-- 外部资源引用 -->
+  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.iocdn.cc/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/4.6.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdbootstrap/4.20.0/css/mdb.min.css">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js"></script>
+  
+  <style>
+    :root {
+      --primary: #3B82F6;
+      --primary-dark: #2563EB;
+      --secondary: #8B5CF6;
+      --accent: #EC4899;
+      --light: #F9FAFB;
+      --dark: #111827;
+      --gray: #6B7280;
+      --light-gray: #E5E7EB;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 70px;
+      padding-bottom: 100px; /* 为底部预留空间 */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 20px auto 0;
+    }
+
+    /* 导航栏 */
+    .navbar {
+      padding: 0.8rem 1rem;
+      transition: var(--transition);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary) !important;
+    }
+
+    .navbar-brand img {
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .nav-link {
+      color: var(--dark) !important;
+      font-weight: 500;
+      padding: 0.5rem 1.2rem !important;
+      margin: 0 5px;
+      border-radius: 50px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--primary) !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 70%;
+    }
+
+    /* 按钮样式 */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      padding: 10px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      opacity: 0;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+      color: white;
+    }
+
+    .btn-primary:hover::before {
+      opacity: 1;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 25px;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* 群卡片样式 */
+    .group-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      height: 100%;
+      border: none;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .group-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .group-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .group-icon i {
+      font-size: 28px;
+      color: white;
+    }
+
+    .badge {
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      margin: 0 5px;
+    }
+
+    /* 底部区域 */
+    .footer {
+      background: white;
+      padding: 40px 0 20px;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+      margin-top: 50px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      margin: 0 15px;
+      font-weight: 500;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.95rem;
+      padding-top: 20px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    /* 动画效果 */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 991.98px) {
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      .group-card {
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      body {
+        padding-top: 60px;
+      }
+      .section {
+        padding: 50px 0;
+      }
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      .group-card {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      .btn-primary {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+      }
+      .footer-links a {
+        margin: 5px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/img/logo128.png" alt="SysRi Logo">
+        <span>SysRi一键重装</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#features">特性</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" rel="noopener" href="/custom">定制</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" rel="noopener" href="/docs">文档</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline ml-2" href="//api.hotpe.top/API/SysRi/GoLink?id=dl">
+              <i class="fa fa-download mr-1"></i> 立即下载
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要内容区 -->
+  <section class="section animate">
+    <div class="container">
+      <div class="section-title animate">
+        <h2>加入官方交流群</h2>
+        <p class="text-muted">与其他用户交流使用经验，获取最新技术支持和软件更新信息</p>
+      </div>
+
+      <div class="row">
+        <!-- 群1 -->
+        <div class="col-md-6 mb-5 animate delay-1">
+          <div class="group-card">
+            <div class="group-icon">
+              <i class="fa fa-qq"></i>
+            </div>
+            <h3 class="text-center mb-3">SysRi一键重装官方交流1群</h3>
+            <p class="text-center mb-4">
+              群号：306868030
+              <span class="badge bg-info text-dark">500人</span>
+              <span class="badge bg-warning text-dark">已满</span>
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="//p1.hotpe.top/i/p/1/66344eb4aa306.jpg" target="_blank" class="btn btn-primary" rel="noopener">
+                <i class="fa fa-qrcode mr-2"></i>二维码
+              </a>
+              <a href="//qm.qq.com/q/OQiQkwg6wA" target="_blank" class="btn btn-primary" rel="noopener">
+                <i class="fa fa-sign-in mr-2"></i>点击加入
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 群2 -->
+        <div class="col-md-6 mb-5 animate delay-2">
+          <div class="group-card">
+            <div class="group-icon">
+              <i class="fa fa-qq"></i>
+            </div>
+            <h3 class="text-center mb-3">SysRi一键重装官方交流2群</h3>
+            <p class="text-center mb-4">
+              群号：961018047
+              <span class="badge bg-info text-dark">1000人</span>
+              <span class="badge bg-success">可用</span>
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="//p1.hotpe.top/i/p/1/66e94396bc905.png" target="_blank" class="btn btn-primary" rel="noopener">
+                <i class="fa fa-qrcode mr-2"></i>二维码
+              </a>
+              <a href="//qm.qq.com/q/qxLbAoFx5g" target="_blank" class="btn btn-primary" rel="noopener">
+                <i class="fa fa-sign-in mr-2"></i>点击加入
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center animate delay-3">
+        <p class="text-muted">
+          加入QQ群可获取：软件使用教程、常见问题解答、技术人员在线支持、版本更新通知
+        </p>
+        <p class="text-muted mt-2">
+          请遵守群规，文明交流，共同维护良好的讨论环境
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部区域 -->
+  <footer class="footer">
+    <div class="container">
+      <p style="text-align: center"><strong>友情链接</strong></p>
+      <div class="footer-links">
+        <a href="//blog.hotpe.top/" target="_blank">VirtualHotBar</a>
+        <a href="//www.netmount.cn/" target="_blank">NetMount</a>
+        <a href="//www.hotpe.top/" target="_blank">HotPE工具箱</a>
+        <a href="//winnew.cn/" target="_blank">WinNew</a>
+      </div>
+
+      <div class="copyright">
+        <a href="//beian.miit.gov.cn/" target="_blank" rel="noopener">蜀ICP备2023001640号-2</a>
+        <br>
+        © 2023-Present <a href="//blog.hotpe.top/" target="_blank">VirtualHotBar</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 导航栏滚动效果
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('.navbar').addClass('shadow-sm');
+        } else {
+          $('.navbar').removeClass('shadow-sm');
+        }
+      });
+
+      // 平滑滚动
+      $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').animate({
+          'scrollTop': $target.offset().top - 70
+        }, 800, 'swing');
+      });
+    });
+  </script>
+</body>
+</html>
