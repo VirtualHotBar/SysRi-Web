@@ -28,7 +28,7 @@ export default defineConfig({
         link: "//sysri.cn/",
       },      {
         text: "定制",
-        link: "//sysri.cn/Custom",
+        link: "//sysri.cn/custom",
       },
     ],
     footer: {
@@ -38,15 +38,15 @@ export default defineConfig({
     editLink: {
       style: 'github',
       domain: 'github.com',
-      repo: 'VirtualHotBar/SysRi-Docs',
+      repo: 'VirtualHotBar/SysRi-Web',
       branch: 'main',
       dir: 'docs',
       text: '在 GitHub 上编辑此页',
-      pattern: 'https://github.com/VirtualHotBar/SysRi-Docs/edit/main/docs/:path'
+      pattern: 'https://github.com/VirtualHotBar/SysRi-Web/edit/main/docs/:path'
     },
     lastUpdatedText: "最近更新于",
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/VirtualHotBar/SysRi-Docs' }
+      { icon: 'github', link: 'https://github.com/VirtualHotBar/SysRi-Web' }
     ],
   },
 });
