@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme="auto" class="">
-
+<html lang="zh-CN" data-theme="system">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,817 +13,300 @@
   <meta property="og:image" content="/favicon.ico">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/favicon.ico">
-
   <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
   <link rel="icon" href="/favicon.ico">
   <title>SysRi一键重装 - 一个纯净、强大、易用的系统重装工具</title>
-
-  <!-- 修复Font Awesome图标引用 -->
-  <link rel="stylesheet"
-    href="//sc.sysri.cn/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-  <link
-    href="//sc.sysri.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="//sc.sysri.cn/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//sc.sysri.cn/npm/mdbootstrap@4.20.0/css/mdb.min.css">
+  <link rel="stylesheet" href="//sc.sysri.cn/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link href="//sc.sysri.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/main.js"></script>
-
-  <style>
-    :root {
-      --primary: #3B82F6;
-      /* 现代蓝色主色调 */
-      --primary-dark: #2563EB;
-      --secondary: #8B5CF6;
-      /* 紫色辅助色 */
-      --accent: #EC4899;
-      /* 强调色 */
-      --light: #F9FAFB;
-      --dark: #111827;
-      --gray: #6B7280;
-      --light-gray: #E5E7EB;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Noto Sans SC', sans-serif;
-      color: var(--dark);
-      background-color: var(--light);
-      line-height: 1.6;
-      overflow-x: hidden;
-      padding-top: 70px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    .section-title h2 {
-      font-size: 2.5rem;
-      color: var(--dark);
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 3px;
-    }
-
-    .section-title p {
-      color: var(--gray);
-      max-width: 700px;
-      margin: 20px auto 0;
-    }
-
-    /* 导航栏 */
-    .navbar {
-      padding: 0.8rem 1rem;
-      transition: var(--transition);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(15px);
-      background: rgba(255, 255, 255, 0.95) !important;
-    }
-
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--primary) !important;
-    }
-
-    .navbar-brand img {
-      margin-right: 10px;
-      width: 30px;
-      height: 30px;
-    }
-
-    .nav-link {
-      color: var(--dark) !important;
-      font-weight: 500;
-      padding: 0.5rem 1.2rem !important;
-      margin: 0 5px;
-      border-radius: 50px;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .nav-link:hover {
-      color: var(--primary) !important;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-      transform: translateX(-50%);
-    }
-
-    .nav-link:hover::after {
-      width: 70%;
-    }
-
-    /* 下载按钮 */
-    .btn-download {
-      background: linear-gradient(135deg, var(--accent), #F472B6);
-      border: none;
-      padding: 12px 28px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: var(--transition);
-      box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
-      display: inline-flex;
-      align-items: center;
-      color: white !important;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .btn-download::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #F472B6, var(--accent));
-      opacity: 0;
-      transition: var(--transition);
-      z-index: -1;
-    }
-
-    .btn-download:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
-    }
-
-    .btn-download:hover::before {
-      opacity: 1;
-    }
-
-    .btn-download i {
-      margin-right: 8px;
-    }
-
-    /* 链接按钮 */
-    .btn-link-group {
-      /* display: flex; */
-      flex-direction: column;
-      margin-top: 10px;
-      margin-left: 20px;
-    }
-
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(59, 130, 246, 0.08);
-      color: var(--primary);
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: var(--transition);
-      margin-bottom: 8px;
-      text-decoration: none !important;
-    }
-
-    .btn-link:hover,
-    .btn-link:focus {
-      /* focus */
-      background: var(--primary);
-      color: white;
-      transform: translateX(5px);
-    }
-
-
-    .btn-link i {
-      margin-right: 6px;
-      font-size: 0.9rem;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      padding: 10px 25px;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: var(--transition);
-    }
-
-    .btn-outline:hover,
-    .btn-outline:focus {
-      background: var(--primary);
-      color: white !important;
-    }
-
-
-    .profile {
-      padding: 100px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile::before {
-      content: '';
-      position: absolute;
-      top: -300px;
-      right: -300px;
-      width: 700px;
-      height: 700px;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .profile-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .profile h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
-      color: var(--dark);
-    }
-
-    .profile p {
-      font-size: 1.2rem;
-      color: var(--gray);
-      margin-bottom: 30px;
-      max-width: 600px;
-    }
-
-    .version-badge {
-      background: rgba(139, 92, 246, 0.15);
-      color: var(--secondary);
-      border-radius: 50px;
-      padding: 5px 15px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .profile-img {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      transform: perspective(1000px) rotateY(-5deg);
-      transition: var(--transition);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .profile-img:hover {
-      transform: perspective(1000px) rotateY(0deg);
-    }
-
-    /* 特性卡片 */
-    .feature-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
-      height: 100%;
-      border: none;
-      position: relative;
-      padding: 30px;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    }
-
-    .feature-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: var(--dark);
-    }
-
-    .feature-card p {
-      color: var(--gray);
-      margin-bottom: 20px;
-    }
-
-    .feature-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: 16px;
-      /* 圆角设计 */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 25px;
-    }
-
-    .feature-icon i {
-      font-size: 28px;
-      color: white;
-    }
-
-    /* 视频部分 */
-    .video-section {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), rgba(139, 92, 246, 0.03));
-      border-radius: 16px;
-      padding: 50px;
-      box-shadow: var(--card-shadow);
-    }
-
-    .video-container {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-      /* 消除底部白边 */
-      background: white;
-    }
-
-    /* 底部区域 */
-    .footer {
-      background: white;
-      padding: 60px 0 30px;
-      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .footer-links a {
-      color: var(--gray);
-      margin: 0 15px;
-      font-weight: 500;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary);
-    }
-
-    .copyright {
-      text-align: center;
-      color: var(--gray);
-      font-size: 0.95rem;
-      padding-top: 20px;
-      border-top: 1px solid var(--light-gray);
-    }
-
-    /* 响应式调整 */
-    @media (max-width: 991.98px) {
-      .profile h1 {
-        font-size: 2.8rem;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-title h2 {
-        font-size: 2rem;
-      }
-
-      .feature-icon {
-        margin: 0 auto 25px;
-      }
-
-      .text-center-md {
-        text-align: center !important;
-      }
-
-      .btn-link-group {
-        margin-left: 15px;
-      }
-
-    }
-
-    @media (max-width: 767.98px) {
-      body {
-        padding-top: 60px;
-      }
-
-      .profile {
-        padding: 70px 0 50px;
-      }
-
-      .profile h1 {
-        font-size: 2.2rem;
-      }
-
-      .profile p {
-        font-size: 1rem;
-      }
-
-      .section-title h2 {
-        font-size: 1.8rem;
-      }
-
-      .btn-download {
-        padding: 10px 22px;
-        font-size: 1rem;
-      }
-
-      .btn-link-group {
-        margin-left: 0;
-        margin-top: 15px;
-        width: 100%;
-      }
-
-      .video-section {
-        padding: 30px;
-      }
-
-      .screenshots-section {
-        padding: 50px 0;
-      }
-
-    }
-
-    @media (max-width: 575.98px) {
-      .profile h1 {
-        font-size: 1.8rem;
-      }
-
-      .profile::before {
-        display: none;
-      }
-
-      .section-title h2 {
-        font-size: 1.6rem;
-      }
-
-      .feature-card {
-        padding: 20px;
-      }
-
-      .footer-links a {
-        margin: 5px 10px;
-      }
-
-      .btn-download {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-
-    /* 动画效果 */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate {
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    .delay-1 {
-      animation-delay: 0.1s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.2s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.3s;
-    }
-  </style>
+  <script src="/js/main.js" defer></script>
+  <script src="//sc.sysri.cn/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="//sc.sysri.cn/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 </head>
+<body class="page-home">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="grid-lines"></div>
 
-<body>
-
-  <!-- 导航栏 -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <header class="navbar" id="navbar">
     <div class="container">
-      <a class="navbar-brand" href="./">
-        <img src="/img/logo128.png" alt="SysRi Logo">
-        <span>SysRi一键重装</span>
-      </a>
+      <div class="nav-head">
+        <a class="brand" href="./">
+          <img src="/img/logo128.png" alt="SysRi Logo" width="44" height="44" decoding="async">
+          <div class="brand-text">
+            <strong>SysRi 一键重装</strong>
+            <span>Pure • Smart • Fast</span>
+          </div>
+        </a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="nav-toggle" id="navToggle" aria-label="展开导航">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">首页</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#features">特性</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener" href="/custom">定制</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener" href="/docs">文档</a>
-          </li>
-          <li class="nav-item">
-            <a class=" btn btn-outline ml-2 nav-link" href="//api.hotpe.top/API/SysRi/GoLink?id=dl">
-              <i class="fa fa-download mr-1"></i> 立即下载
-            </a>
-          </li>
-        </ul>
+      <div class="nav-actions">
+        <nav class="nav-links">
+          <a class="nav-link" href="#features">特性</a>
+          <a class="nav-link" href="#workflow">流程</a>
+          <a class="nav-link" target="_blank" rel="noopener" href="/custom">定制</a>
+          <a class="nav-link" target="_blank" rel="noopener" href="/docs">文档</a>
+        </nav>
+        <div class="controls">
+          <button class="theme-btn" id="themeToggle" aria-label="切换主题"><i class="fa fa-sun-o"></i></button>
+          <button class="btn btn-primary nav-download" onclick="downloadAndShowModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')">
+            <i class="fa fa-bolt"></i> 立即下载
+          </button>
+        </div>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <section class="profile">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0 ">
-          <span class="version-badge animate delay-1">v1.25.07T</span>
-          <h1 class="animate delay-1">纯净无捆绑，强大且易用</h1>
-          <p class="animate delay-2">一个纯净、强大、易用的系统重装工具，支持一键在线重装，兼容性极好，无论是技术员还是小白都能快速上手，省心且高效!</p>
-
-          <div class="d-flex align-items-center flex-wrap animate delay-3">
-            <button class="btn btn-download"
-              onclick="downAndOpenThanksToDocsModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')">
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-text" data-animate>
+          <div class="pill">
+            <span class="dot live"></span>
+            v1.25.07T
+          </div>
+          <h1>纯净无捆绑，<span class="grad">强大且易用</span></h1>
+          <p class="lede">一个纯净、强大、易用的系统重装工具，支持一键在线重装，兼容性极好，无论是技术员还是小白都能快速上手，省心且高效!</p>
+          <div class="cta-group">
+            <button class="btn btn-primary" onclick="downloadAndShowModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')">
               <i class="fa fa-download"></i> 立即下载
             </button>
-            <div class="btn-link-group">
-              <a href="/com-group/" target="_blank" class="btn-link">
-                <i class="fa fa-comments"></i> 交流群
-              </a>
-              <a href="/custom" target="_blank" class="btn-link">
-                <i class="fa fa-cog"></i> 软件定制
-              </a>
-              <!-- <a href="/docs/serve/custom/directlink.html" target="_blank" class="btn-link">
-                <i class="fa fa-link"></i> 文件直链
-              </a> -->
-            </div>
+            <a href="/com-group/" target="_blank" class="btn btn-ghost" rel="noopener">
+              <i class="fa fa-comments"></i> 交流群
+            </a>
+            <a href="/custom" target="_blank" class="btn btn-quiet" rel="noopener">
+              软件定制
+            </a>
+          </div>
+
+
+
+          <div class="micro-highlights">
+            <div class="chip"><i class="fa fa-shield"></i> Win 7/8/10/11/Server</div>
+            <div class="chip"><i class="fa fa-th-large"></i> 家庭版 / 专业版 / 企业版</div>
           </div>
         </div>
-
-        <div class="col-lg-6 animate delay-2">
-          <img src="//sc.sysri.cn/i/p/1/686bd0b7b8f43.png" class="img-fluid profile-img" alt="SysRi Screenshot">
+        <div class="hero-visual" data-animate>
+          <div class="hero-shot">
+            <img src="//sc.sysri.cn/i/p/1/686bd0b7b8f43.png" alt="SysRi 界面预览" width="1025" height="743" decoding="async">
+            <div class="floating-badge"><i class="fa fa-check-circle"></i> 即装即用</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 特性介绍 -->
-  <section id="features" class="section">
-    <div class="container">
-      <div class="section-title animate">
-        <h2>产品特性</h2>
-        <p class="text-muted">SysRi 为您提供最纯净、最高效的系统重装体验</p>
-      </div>
-
-      <div class="row">
-        <!-- 特性1 -->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="feature-card animate delay-1">
-            <div class="feature-icon mx-auto">
-              <i class="fa fa-shield"></i> <!-- 使用Font Awesome 4.x图标 -->
-            </div>
-            <h3 class="text-center">原汁原味，不夹带私货</h3>
-            <p class="text-center">最新纯净版系统，装完系统桌面一堆流氓软件的日子一去不复返！</p>
-            <ul class="pl-3">
-              <li>提供Win XP/7/8/10/11/Server等系统</li>
+    </section>
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Features</p>
+          <h2>产品特性</h2>
+          <p class="sub">SysRi 为您提供最纯净、最高效的系统重装体验</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card" data-animate>
+            <div class="icon"><i class="fa fa-shield"></i></div>
+            <h3>原汁原味，不夹带私货</h3>
+            <p>最新纯净版系统，装完系统桌面一堆流氓软件的日子一去不复返！</p>
+            <ul>
+              <li>提供Win 7/8/10/11/Server等系统</li>
               <li>家庭版、专业版、企业版等多种版本</li>
               <li>完全纯净，无任何捆绑软件</li>
             </ul>
           </div>
-        </div>
 
-        <!-- 特性2 - 修复了U盘启动图标 -->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="feature-card animate delay-2">
-            <div class="feature-icon mx-auto">
-              <i class="fa fa-usb"></i> <!-- 使用Font Awesome 4.x的U盘图标 -->
-            </div>
-            <h3 class="text-center">U盘启动，排除万难</h3>
-            <p class="text-center">支持多种启动方式，兼容各种硬件环境</p>
-            <ul class="pl-3">
+          <div class="feature-card" data-animate>
+            <div class="icon"><i class="fa fa-usb"></i></div>
+            <h3>U盘启动，排除万难</h3>
+            <p>支持多种启动方式，兼容各种硬件环境</p>
+            <ul>
               <li>支持U盘、移动硬盘、固态U盘</li>
               <li>兼容Legacy和UEFI启动模式</li>
               <li>内置多种维护工具和驱动程序</li>
             </ul>
           </div>
-        </div>
 
-        <!-- 特性3 -->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="feature-card animate delay-3">
-            <div class="feature-icon mx-auto">
-              <i class="fa fa-history"></i>
-            </div>
-            <h3 class="text-center">备份还原，有备无患</h3>
-            <p class="text-center">一键备份还原，保护您的系统和数据</p>
-            <ul class="pl-3">
+          <div class="feature-card" data-animate>
+            <div class="icon"><i class="fa fa-history"></i></div>
+            <h3>备份还原，有备无患</h3>
+            <p>一键备份还原，保护您的系统和数据</p>
+            <ul>
               <li>一键热备份当前运行的系统</li>
               <li>系统故障时快速还原到正常状态</li>
               <li>增量备份节省空间和时间</li>
             </ul>
           </div>
-        </div>
 
-        <!-- 特性4 - 修复了软件中心图标 -->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="feature-card animate delay-1">
-            <div class="feature-icon mx-auto">
-              <i class="fa fa-th-large"></i> <!-- 使用正确的Font Awesome图标 -->
-            </div>
-            <h3 class="text-center">软件中心，快速装机</h3>
-            <p class="text-center">内置常用软件，装机更高效</p>
-            <ul class="pl-3">
+          <div class="feature-card" data-animate>
+            <div class="icon"><i class="fa fa-th-large"></i></div>
+            <h3>软件中心，快速装机</h3>
+            <p>内置常用软件，装机更高效</p>
+            <ul>
               <li>界面友好，操作简单</li>
               <li>包含装机必备常用软件</li>
               <li>支持多个软件同时安装</li>
             </ul>
           </div>
-        </div>
 
-        <!-- 特性5 -->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="feature-card animate delay-2">
-            <div class="feature-icon mx-auto">
-              <i class="fa fa-bolt"></i>
-            </div>
-            <h3 class="text-center">极速安装，效率提升</h3>
-            <p class="text-center">优化安装流程，大幅缩短安装时间</p>
-            <ul class="pl-3">
+          <div class="feature-card" data-animate>
+            <div class="icon"><i class="fa fa-bolt"></i></div>
+            <h3>极速安装，效率提升</h3>
+            <p>优化安装流程，大幅缩短安装时间</p>
+            <ul>
               <li>智能硬件检测优化安装方案</li>
               <li>SSD固态硬盘优化支持</li>
               <li>并行安装技术提高效率</li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- 特性6 - 修复了技术支持图标 -->
-        <div class="col-md-6 col-lg-4 mb-5">
-          <div class="feature-card animate delay-3">
-            <div class="feature-icon mx-auto">
-              <i class="fa fa-life-ring"></i> <!-- 使用正确的Font Awesome图标 -->
+    <section class="section flow" id="workflow">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Process</p>
+          <h2>3 步完成重装</h2>
+          <p class="sub">清晰流程与提示指引，重装更省心。</p>
+        </div>
+
+        <div class="flow-steps">
+          <div class="flow-step" data-animate>
+            <div class="step-index">01</div>
+            <div class="step-body">
+              <h3>选择镜像 & 预检</h3>
+              <p>从官方仓库一键选择合适版本，自动校验签名和完整性。</p>
+              <div class="step-badges">
+                <span>镜像签名校验</span>
+                <span>MD5 / SHA 核验</span>
+              </div>
             </div>
-            <h3 class="text-center">技术支持，无忧使用</h3>
-            <p class="text-center">完善的技术支持和社区帮助</p>
-            <ul class="pl-3">
-              <li>24小时在线技术支持</li>
-              <li>活跃用户社区互助</li>
-              <li>详细文档和视频教程</li>
-            </ul>
+          </div>
+
+          <div class="flow-step" data-animate>
+            <div class="step-index">02</div>
+            <div class="step-body">
+              <h3>智能适配 & 配置</h3>
+              <p>检测硬件、分区、引导方式，推送最优驱动与启动方案。</p>
+              <div class="step-badges">
+                <span>NVMe / SATA</span>
+                <span>UEFI / Legacy</span>
+                <span>Secure Boot</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-step" data-animate>
+            <div class="step-index">03</div>
+            <div class="step-body">
+              <h3>一键执行 & 保障</h3>
+              <p>自动分区、部署、驱动安装，安装急救WinPE以备不时之需。</p>
+              <div class="step-badges">
+                <span>并行处理</span>
+                <span>急救WinPE</span>
+                <span>操作日志</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" data-animate>
+          <i class="fa fa-lightbulb-o"></i>
+          提示：安装过程中可随时切换深/浅色界面，保持视觉一致性；下载按钮会触发引导模态框与文档入口。
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="video">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">Demo</p>
+          <h2>操作演示</h2>
+          <p class="sub">观看SysRi一键重装系统的实际操作流程</p>
+        </div>
+
+        <div class="video-card" data-animate>
+          <div class="video-wrapper">
+            <video src="//p0.hotpe.top/other/SysRI/SysRi系统重装.mp4" controls>
+              您的浏览器不支持 video 标签。
+            </video>
+          </div>
+          <div class="video-meta">
+            <span><i class="fa fa-play-circle"></i> 全程讲解 · 2x 可倍速</span>
+            <a class="btn btn-ghost" href="/docs/started.html" target="_blank" rel="noopener">阅读图文教程</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- 视频演示 -->
-  <section class="section pt-0">
-    <div class="container">
-      <div class="video-section animate">
-        <div class="section-title">
-          <h2>操作演示</h2>
-          <p class="text-muted">观看SysRi一键重装系统的实际操作流程</p>
+    <section class="section cta" id="download">
+      <div class="container cta-card" data-animate>
+        <div>
+          <p class="eyebrow">Ready</p>
+          <h2>准备开始重装？</h2>
+          <p class="sub">立即下载 SysRi 一键重装系统，体验纯净、高效的重装过程。</p>
         </div>
-
-
-        <video src="//p0.hotpe.top/other/SysRI/SysRi系统重装.mp4" class="video-container w-100" controls="controls">
-          您的浏览器不支持 video 标签。
-        </video>
-
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="downloadAndShowModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')">
+            <i class="fa fa-download"></i> 立即下载
+          </button>
+          <a class="btn btn-ghost" href="/docs/started.html" target="_blank" rel="noopener">
+            查看文档
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- 下载提示模态框 -->
-  <div class="modal fade" id="ThanksToDocsModal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">感谢您的下载！</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <div class="modal-overlay" id="downloadModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Download</p>
+          <h3 class="modal-title">感谢您的下载！</h3>
         </div>
-        <div class="modal-body">
-          <p>强烈建议您阅读文档后再使用，在这里有SysRi的使用介绍和解决方案。</p>
-          <p class="mt-3">
-            <a href="//api.hotpe.top/API/SysRi/GoLink?id=dl" target="_blank" class="text-primary font-weight-bold"
-              rel="noopener" target="_blank">
-              没有开始下载？点击此处重新下载
-            </a>
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">稍后阅读</button>
-          <button type="button" class="btn btn-primary"
-            onclick="window.open('/docs/started.html', '_blank')">查看文档</button>
-        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="关闭">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>强烈建议您阅读文档后再使用，在这里有SysRi的使用介绍和解决方案。</p>
+        <a href="//api.hotpe.top/API/SysRi/GoLink?id=dl" target="_blank" rel="noopener">
+          没有开始下载？点击此处重新下载
+        </a>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn secondary" onclick="closeModal()">稍后阅读</button>
+        <button class="modal-btn primary" onclick="window.open('/docs/started.html', '_blank')">
+          查看文档
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- 底部区域 -->
   <footer class="footer">
     <div class="container">
-      <p style="text-align: center"><strong>友 情 链 接</strong></p>
-      <div class="footer-links">
-        <a href="//blog.hotpe.top/" target="_blank">VirtualHotBar</a>
-        <a href="//www.netmount.cn/" target="_blank">NetMount</a>
-        <a href="//www.hotpe.top/" target="_blank">HotPE工具箱</a>
-        <a href="//winnew.cn/" target="_blank">WinNew</a>
+      <div class="friend-links">
+        <p>友 情 链 接</p>
+        <div class="link-group">
+          <a href="//blog.hotpe.top/" target="_blank" rel="noopener">VirtualHotBar</a>
+          <a href="//www.netmount.cn/" target="_blank" rel="noopener">NetMount</a>
+          <a href="//www.hotpe.top/" target="_blank" rel="noopener">HotPE工具箱</a>
+          <a href="//winnew.cn/" target="_blank" rel="noopener">WinNew</a>
+        </div>
       </div>
 
       <div class="copyright">
         <a href="//beian.miit.gov.cn/" target="_blank" rel="noopener">蜀ICP备2023001640号-2</a>
         <br>
-        © 2023-Present <a href="//blog.hotpe.top/" target="_blank">VirtualHotBar</a>
+        © 2023-Present <a href="//blog.hotpe.top/" target="_blank" rel="noopener">VirtualHotBar</a>
       </div>
     </div>
   </footer>
 
-  <script src="//sc.sysri.cn/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="//sc.sysri.cn/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // 下载并打开文档引导窗口
-    function downAndOpenThanksToDocsModal(url) {
-      window.open(url, '_self');
-      setTimeout(function () {
-        $('#ThanksToDocsModal').modal('show');
-      }, 2000);
-    }
-
-    // 滚动动画效果
-    $(document).ready(function () {
-      // 导航栏滚动效果
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-          $('.navbar').addClass('shadow-sm');
-        } else {
-          $('.navbar').removeClass('shadow-sm');
-        }
-      });
-
-      // 平滑滚动
-      $('a[href^="#"]').on('click', function (e) {
-        e.preventDefault();
-        var target = this.hash;
-        var $target = $(target);
-
-        $('html, body').animate({
-          'scrollTop': $target.offset().top - 70
-        }, 800, 'swing');
-      });
-    });
-  </script>
 </body>
-
 </html>
+
+
+
