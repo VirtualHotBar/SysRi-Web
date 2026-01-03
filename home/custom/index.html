@@ -1,757 +1,125 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="zh-CN" data-theme="system">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
-  <link rel="icon" href="/favicon.ico">
-  <title>专业软件定制开发：装机软件,系统工具,Web网站,其他软件定制开发 - SysRi</title>
-    <meta property="og:type" content="website">
-  <meta property="og:title" content="专业软件定制开发">
+  <meta name="description" content="专业软件定制开发：装机工具、PE系统、Web站点与其他定制方案">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="专业软件定制开发 - SysRi">
   <meta property="og:url" content="./index.html">
   <meta property="og:site_name" content="专业软件定制开发">
-  <meta property="og:description" content="丰厚的开发经验，为您提供专业的软件定制开发服务，包括装机软件定制、PE系统定制、Web网站定制和其他软件定制开发，满足个性化需求，助力企业信息化发展!">
+  <meta property="og:description" content="装机软件、PE系统、Web网站及企业定制工具开发，按需交付。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:image" content="/favicon.ico">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/favicon.ico">
-
-  <meta name="description" content="丰厚的开发经验，为您提供专业的软件定制服务，包括装机软件定制、PE系统定制、Web网站定制和其他软件定制，满足个性化需求，助力企业信息化发展。">
-  <link
-    href="//sc.sysri.cn/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="//sc.sysri.cn/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-
-    <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/main.js"></script>
-  <style>
-    /* 原有样式保持不变 */
-    :root {
-      --primary: #3B82F6;
-      --primary-dark: #2563EB;
-      --secondary: #8B5CF6;
-      --accent: #EC4899;
-      --light: #F9FAFB;
-      --dark: #111827;
-      --gray: #6B7280;
-      --light-gray: #E5E7EB;
-      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Noto Sans SC', sans-serif;
-      color: var(--dark);
-      background-color: var(--light);
-      line-height: 1.6;
-      overflow-x: hidden;
-      padding-top: 70px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .container {
-      width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
-      margin-right: auto;
-      margin-left: auto;
-      max-width: 1200px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    .section-title h2 {
-      font-size: 2.5rem;
-      color: var(--dark);
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 3px;
-    }
-
-    .section-title p {
-      color: var(--gray);
-      max-width: 700px;
-      margin: 20px auto 0;
-    }
-
-    /* 导航栏 */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 0.8rem 1rem;
-      transition: var(--transition);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(15px);
-      background: rgba(255, 255, 255, 0.95) !important;
-    }
-
-    .navbar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--primary) !important;
-      text-decoration: none;
-    }
-
-    .navbar-brand img {
-      margin-right: 10px;
-      width: 30px;
-      height: 30px;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-    }
-
-    .nav-link {
-      color: var(--dark) !important;
-      font-weight: 500;
-      padding: 0.5rem 1.2rem !important;
-      margin: 0 5px;
-      border-radius: 50px;
-      transition: var(--transition);
-      position: relative;
-      text-decoration: none;
-    }
-
-    .nav-link:hover {
-      color: var(--primary) !important;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: var(--transition);
-      transform: translateX(-50%);
-    }
-
-    .nav-link:hover::after {
-      width: 70%;
-    }
-
-    /* 定制服务卡片 */
-    .customization-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .custom-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
-      height: 100%;
-      border: none;
-      position: relative;
-      padding: 40px;
-    }
-
-    .custom-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    }
-
-    .custom-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-    }
-
-    .custom-card h3 i {
-      color: var(--primary) !important;
-      margin-right: 15px;
-      font-size: 1.5em;
-      display: inline-block !important;
-      font-family: "Font Awesome 6 Free" !important;
-      font-weight: 900 !important;
-    }
-
-    /* 新增：横向卡片样式 */
-    .horizontal-card {
-      grid-column: 1 / -1;
-      /* 跨所有列 */
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .card-content-main {
-      flex: 3;
-      padding: 40px;
-      border-right: 1px solid var(--light-gray);
-    }
-
-    .card-content-side {
-      flex: 2;
-      padding: 40px;
-      background-color: rgba(59, 130, 246, 0.03);
-    }
-
-    /* 技术栈标签样式 */
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 25px;
-    }
-
-    .tech-tag {
-      padding: 6px 16px;
-      background: rgba(59, 130, 246, 0.1);
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--primary-dark);
-      transition: var(--transition);
-    }
-
-    .tech-tag:hover {
-      background: rgba(59, 130, 246, 0.2);
-      transform: translateY(-2px);
-    }
-
-    /* 图标加载失败时的备选样式 */
-    .custom-card h3 .icon-backup::before {
-      content: "💾";
-      margin-right: 15px;
-    }
-
-    .custom-card p {
-      color: var(--gray);
-      margin-bottom: 25px;
-      font-weight: normal;
-    }
-
-    .feature-list {
-      list-style: none;
-      margin-bottom: 30px;
-    }
-
-    .feature-list li {
-      padding: 8px 0;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-    }
-
-    .feature-list li i {
-      color: var(--primary);
-      margin-right: 10px;
-    }
-
-    /* 按钮样式 */
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border: none;
-      padding: 12px 28px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: var(--transition);
-      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-      display: inline-flex;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-    }
-
-    .btn-primary i {
-      margin-right: 8px;
-    }
-
-    /* 合作咨询部分 */
-    .contact-section {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
-      border-radius: 16px;
-      padding: 60px;
-      margin-top: 80px;
-      text-align: center;
-    }
-
-    .contact-section h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .contact-section p {
-      color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 30px;
-      font-weight: normal;
-    }
-
-    /* 页脚 */
-    .footer {
-      background: white;
-      padding: 60px 0 30px;
-      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
-      margin-top: 80px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .footer-links a {
-      color: var(--gray);
-      margin: 0 15px;
-      font-weight: 500;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary);
-    }
-
-
-
-    .copyright {
-      text-align: center;
-      color: var(--gray);
-      font-size: 0.95rem;
-      padding-top: 20px;
-      border-top: 1px solid var(--light-gray);
-    }
-
-    .copyright a {
-      color: var(--gray);
-      transition: var(--transition);
-      text-decoration: none;
-    }
-    .copyright a:hover {
-      color: var(--primary);
-    }
-
-
-
-
-    /* 项目展示区域样式 */
-    .projects-section {
-      padding: 60px 0;
-      background-color: #f8fafc;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .project-header {
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--light-gray);
-    }
-
-    .project-icon {
-      width: 50px;
-      height: 50px;
-      margin-right: 15px;
-      object-fit: contain;
-      border-radius: 10px;
-      background: rgba(59, 130, 246, 0.1);
-      padding: 8px;
-    }
-
-    .project-title {
-      font-size: 1.4rem;
-      color: var(--dark);
-      margin-bottom: 5px;
-    }
-
-    .project-body {
-      padding: 20px;
-      flex-grow: 1;
-    }
-
-    .project-description {
-      color: var(--gray);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .project-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .badge {
-      padding: 5px 12px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .opensource-badge {
-      background: rgba(46, 164, 79, 0.1);
-      color: #2ea44f;
-    }
-
-
-    .os-badge {
-      background: rgba(59, 130, 246, 0.1);
-      color: var(--primary-dark);
-    }
-
-
-    .project-footer {
-      padding: 15px 20px;
-      background: rgba(59, 130, 246, 0.03);
-      border-top: 1px solid var(--light-gray);
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      color: var(--primary-dark);
-      font-weight: 500;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .project-link:hover {
-      color: var(--primary);
-    }
-
-    .project-link i {
-      margin-right: 8px;
-    }
-
-    /* 新增：项目折叠控制样式 */
-    .project-controls {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .toggle-btn {
-      background: white;
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .toggle-btn:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    .toggle-btn i {
-      margin-left: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .toggle-btn.expanded i {
-      transform: rotate(180deg);
-    }
-
-    .hidden-projects {
-      display: none;
-    }
-
-    
-
-    /* 响应式调整 */
-    @media (max-width: 991.98px) {
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-title h2 {
-        font-size: 2rem;
-      }
-
-      .contact-section {
-        padding: 40px;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      body {
-        padding-top: 60px;
-      }
-
-      .navbar-container {
-        flex-direction: column;
-      }
-
-      .nav-links {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .nav-link {
-        padding: 0.5rem 0.8rem !important;
-        margin: 5px;
-      }
-
-      .section-title h2 {
-        font-size: 1.8rem;
-      }
-
-      .custom-card {
-        padding: 30px;
-      }
-
-      .horizontal-card {
-        flex-direction: column;
-      }
-
-      .card-content-main,
-      .card-content-side {
-        border-right: none;
-        border-bottom: 1px solid var(--light-gray);
-      }
-
-      .contact-section {
-        padding: 40px;
-      }
-
-      .contact-section h3 {
-        font-size: 1.6rem;
-      }
-    }
-
-    @media (max-width: 575.98px) {
-      .section-title h2 {
-        font-size: 1.6rem;
-      }
-
-      .footer-links a {
-        margin: 5px 10px;
-        display: inline-block;
-      }
-
-      .btn-primary {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-
-    /* 动画效果 */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate {
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    .delay-1 {
-      animation-delay: 0.1s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.2s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.3s;
-    }
-
-    .delay-4 {
-      animation-delay: 0.4s;
-    }
-  </style>
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+  <title>专业软件定制开发 - SysRi</title>
+  <link rel="stylesheet" href="//sc.sysri.cn/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link href="//sc.sysri.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js" defer></script>
 </head>
-
-<body>
-  <!-- 导航栏 -->
-  <nav class="navbar">
-    <div class="container navbar-container">
-      <a class="navbar-brand" href="#">
-        <img src="/img/logo128.png" alt="SysRi Logo"> 定制开发
-      </a>
-      <ul class="nav-links">
-        <li><a class="nav-link" href="/">首页</a></li>
-        <li><a class="nav-link" href="#" style="color: var(--primary) !important;">定制</a></li>
-        <li><a class="nav-link" href="/docs/serve/custom.html">文档</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- 页头部分 -->
-  <section class="section">
+<body class="page-custom">
+  <header class="navbar" id="navbar">
     <div class="container">
-      <div class="section-title animate">
-        <h2>软件定制开发服务</h2>
-        <p>量身定制，用心设计，为您提供专业的软件定制开发解决方案，满足个性化需求</p>
+      <div class="nav-head">
+        <a class="brand" href="/">
+          <img src="/img/logo128.png" alt="SysRi Logo" width="44" height="44" decoding="async">
+          <div class="brand-text">
+            <strong>SysRi 一键重装</strong>
+            <span>Pure • Smart • Fast</span>
+          </div>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="展开导航"><i class="fa fa-bars"></i></button>
       </div>
+      <div class="nav-actions">
+        <nav class="nav-links">
+          <a class="nav-link" href="/">首页</a>
+          <a class="nav-link" href="/com-group/">交流群</a>
+          <a class="nav-link" href="/docs/">文档</a>
+        </nav>
+        <div class="controls">
+          <button class="theme-btn" id="themeToggle" aria-label="切换主题"><i class="fa fa-sun-o"></i></button>
+          <button class="btn btn-primary" onclick="downloadAndShowModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')"><i class="fa fa-download"></i> 下载</button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <div class="customization-cards">
-        <!-- 装机软件定制 -->
-        <div class="custom-card animate delay-1">
-          <h3><i class="fas fa-laptop-code"></i> 装机软件定制</h3>
-          <p>基于SysRi一键重装核心技术，打造个性化、高兼容性、高可用的装机/重装软件解决方案</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> 定制专属系统镜像</li>
-            <li><i class="fas fa-check-circle"></i> 预装指定软件和驱动</li>
-            <li><i class="fas fa-check-circle"></i> 企业级部署优化</li>
-            <li><i class="fas fa-check-circle"></i> 自动化安装流程</li>
-            <li><i class="fas fa-check-circle"></i> 品牌定制与包装</li>
-          </ul>
-          <a href="/docs/serve/custom/sysri.html" class="btn-primary"><i class="fas fa-comment-alt"></i> 咨询详情</a>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Custom</p>
+          <h2>软件定制开发服务</h2>
+          <p>量身定制，用心设计，为您提供专业的软件定制开发解决方案，满足个性化需求</p>
         </div>
 
-        <!-- PE系统定制 -->
-        <div class="custom-card animate delay-2">
-          <h3><i class="fas fa-tools" aria-hidden="true"></i> PE系统定制</h3>
-          <p>基于SysRi内置PE，开发高兼容性、功能强大、可扩展的WinPE系统，满足各种维护需求</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> 定制PE启动环境</li>
-            <li><i class="fas fa-check-circle"></i> 集成专业维护工具</li>
-            <li><i class="fas fa-check-circle"></i> 硬件驱动兼容性优化</li>
-            <li><i class="fas fa-check-circle"></i> 数据恢复功能增强</li>
-            <li><i class="fas fa-check-circle"></i> HPM模块扩展</li>
-          </ul>
-          <a href="/docs/serve/custom/winpe.html" class="btn-primary"><i class="fas fa-comment-alt"></i> 咨询详情</a>
-        </div>
-
-        <!-- Web网站定制 -->
-        <div class="custom-card animate delay-3">
-          <h3><i class="fas fa-globe"></i> Web网站定制</h3>
-          <p>案例参考SysRi官网，打造美观、响应式、可交互的网站，提升品牌形象和用户体验</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> 企业官网设计开发</li>
-            <li><i class="fas fa-check-circle"></i> 响应式布局适配</li>
-            <li><i class="fas fa-check-circle"></i> 交互效果与动画</li>
-            <li><i class="fas fa-check-circle"></i> 后台管理系统集成</li>
-            <li><i class="fas fa-check-circle"></i> SEO优化与维护</li>
-          </ul>
-          <a href="/docs/serve/custom/web.html" class="btn-primary"><i class="fas fa-comment-alt"></i> 咨询详情</a>
-        </div>
-
-        <!-- 新增：其他软件定制（横向卡片） -->
-        <div class="custom-card horizontal-card animate delay-4">
-          <div class="card-content-main">
-            <h3><i class="fas fa-code"></i> 其他软件定制</h3>
-            <p>除上述服务外，我们提供全方位的系统工具和实用软件定制服务，涵盖多种技术栈和平台</p>
-
+        <div class="custom-grid">
+          <div class="card custom-card">
+            <h3><i class="fa fa-laptop"></i> 装机软件定制</h3>
+            <p>基于SysRi一键重装核心技术，打造个性化、高兼容性、高可用的装机/重装软件解决方案</p>
             <ul class="feature-list">
-              <li><i class="fas fa-check-circle"></i> 系统维护与优化工具定制开发</li>
-              <li><i class="fas fa-check-circle"></i> 自动化脚本与批处理程序</li>
-              <li><i class="fas fa-check-circle"></i> 数据迁移与备份解决方案</li>
-              <li><i class="fas fa-check-circle"></i> 企业级IT管理工具</li>
+              <li><i class="fa fa-check-circle"></i> 定制专属系统镜像</li>
+              <li><i class="fa fa-check-circle"></i> 预装指定软件和驱动</li>
+              <li><i class="fa fa-check-circle"></i> 企业级部署优化</li>
+              <li><i class="fa fa-check-circle"></i> 自动化安装流程</li>
+              <li><i class="fa fa-check-circle"></i> 品牌定制与包装</li>
             </ul>
-
-            <a href="/docs/serve/custom/other.html" class="btn-primary">
-              <i class="fas fa-comment-alt"></i> 咨询定制方案
-            </a>
+            <a href="/docs/serve/custom/sysri.html" class="btn btn-primary"><i class="fa fa-comments"></i> 咨询详情</a>
           </div>
 
+          <div class="card custom-card">
+            <h3><i class="fa fa-wrench"></i> PE系统定制</h3>
+            <p>基于SysRi内置PE，开发高兼容性、功能强大、可扩展的WinPE系统，满足各种维护需求</p>
+            <ul class="feature-list">
+              <li><i class="fa fa-check-circle"></i> 定制PE启动环境</li>
+              <li><i class="fa fa-check-circle"></i> 集成专业维护工具</li>
+              <li><i class="fa fa-check-circle"></i> 硬件驱动兼容性优化</li>
+              <li><i class="fa fa-check-circle"></i> 数据恢复功能增强</li>
+              <li><i class="fa fa-check-circle"></i> HPM模块扩展</li>
+            </ul>
+            <a href="/docs/serve/custom/winpe.html" class="btn btn-primary"><i class="fa fa-comments"></i> 咨询详情</a>
+          </div>
+
+          <div class="card custom-card">
+            <h3><i class="fa fa-globe"></i> Web网站定制</h3>
+            <p>案例参考SysRi官网，打造美观、响应式、可交互的网站，提升品牌形象和用户体验</p>
+            <ul class="feature-list">
+              <li><i class="fa fa-check-circle"></i> 企业官网设计开发</li>
+              <li><i class="fa fa-check-circle"></i> 响应式布局适配</li>
+              <li><i class="fa fa-check-circle"></i> 交互效果与动画</li>
+              <li><i class="fa fa-check-circle"></i> 后台管理系统集成</li>
+              <li><i class="fa fa-check-circle"></i> SEO优化与维护</li>
+            </ul>
+            <a href="/docs/serve/custom/web.html" class="btn btn-primary"><i class="fa fa-comments"></i> 咨询详情</a>
+          </div>
+
+        </div>
+
+        <div class="card custom-card horizontal-card">
+          <div class="card-content-main">
+            <h3><i class="fa fa-code"></i> 其他软件定制</h3>
+            <p>除上述服务外，我们提供全方位的系统工具和实用软件定制服务，涵盖多种技术栈和平台</p>
+            <ul class="feature-list">
+              <li><i class="fa fa-check-circle"></i> 系统维护与优化工具定制开发</li>
+              <li><i class="fa fa-check-circle"></i> 自动化脚本与批处理程序</li>
+              <li><i class="fa fa-check-circle"></i> 数据迁移与备份解决方案</li>
+              <li><i class="fa fa-check-circle"></i> 企业级IT管理工具</li>
+            </ul>
+            <a href="/docs/serve/custom/other.html" class="btn btn-primary">
+              <i class="fa fa-comments"></i> 咨询定制方案
+            </a>
+          </div>
           <div class="card-content-side">
             <h4>支持技术栈</h4>
             <div class="tech-tags">
               <span class="tech-tag">TypeScript</span>
               <span class="tech-tag">Electron</span>
               <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Tauri </span>
+              <span class="tech-tag">Tauri</span>
               <span class="tech-tag">Rust</span>
               <span class="tech-tag">Shell/Batch</span>
               <span class="tech-tag">PowerShell</span>
@@ -759,217 +127,156 @@
               <span class="tech-tag">C/C++</span>
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Go</span>
-              <span class="tech-tag">React Native</span>
               <span class="tech-tag">C#</span>
-              <span class="tech-tag">WinAPI</span>
-
             </div>
-
-            <h4 style="margin-top: 30px;">平台支持</h4>
+            <h4>平台支持</h4>
             <ul class="feature-list">
-              <li><i class="fas fa-desktop"></i> Windows 7/8/10/11</li>
-              <li><i class="fab fa-linux"></i> 主流Linux发行版</li>
-              <li><i class="fab fa-apple"></i> macOS</li>
-              <li><i class="fas fa-server"></i> 服务器环境</li>
+              <li><i class="fa fa-desktop"></i> Windows 7/8/10/11</li>
+              <li><i class="fa fa-linux"></i> 主流Linux发行版</li>
+              <li><i class="fa fa-apple"></i> macOS</li>
+              <li><i class="fa fa-server"></i> 服务器环境</li>
             </ul>
           </div>
         </div>
+
+        <section class="projects-section">
+          <div class="section-title">
+            <p class="eyebrow">Cases</p>
+            <h2>项目案例</h2>
+            <p>以下是我们的代表性软件项目，部分已在GitHub开源</p>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-card">
+              <div class="project-header">
+                <img src="/img/hotpe-icon.png" alt="HotPE图标" class="project-icon">
+                <div>
+                  <h3 class="project-title">HotPE工具箱</h3>
+                  <div class="project-badges">
+                    <span class="group-badge badge-info">Windows</span>
+                    <span class="group-badge badge-success">开源</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <p>功能全面的系统维护工具箱，提供分区管理、系统备份/还原、硬件检测等功能、HPM模块。支持UEFI/BIOS启动和多种启动方式。</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/VirtualHotBar/HotPEToolBox" class="project-link" target="_blank" rel="noopener">
+                  <i class="fa fa-github"></i> 代码仓库
+                </a>
+                <a href="https://www.hotpe.top/" class="project-link" target="_blank" rel="noopener">
+                  <i class="fa fa-external-link"></i> 官网
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <img src="/img/logo128.png" alt="SysRi图标" class="project-icon">
+                <div>
+                  <h3 class="project-title">SysRi一键重装</h3>
+                  <div class="project-badges">
+                    <span class="group-badge badge-info">Windows</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <p>高效安全的Windows系统一键重装工具，支持多语言、多种网络环境，简化系统安装流程。内置硬件检测和软件中心等功能。</p>
+              </div>
+              <div class="project-footer">
+                <span></span>
+                <a href="/" class="project-link" target="_blank" rel="noopener">
+                  <i class="fa fa-external-link"></i> 官网
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <img src="/img/nm-icon.svg" alt="NetMount图标" class="project-icon">
+                <div>
+                  <h3 class="project-title">NetMount</h3>
+                  <div class="project-badges">
+                    <span class="group-badge badge-info">Windows</span>
+                    <span class="group-badge badge-info">Linux</span>
+                    <span class="group-badge badge-info">macOS</span>
+                    <span class="group-badge badge-success">开源</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <p>统一管理和挂载云存储设施的工具，支持多种云服务提供商，实现数据集中管理。</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/VirtualHotBar/NetMount" class="project-link" target="_blank" rel="noopener">
+                  <i class="fa fa-github"></i> 代码仓库
+                </a>
+                <a href="https://www.netmount.cn/" class="project-link" target="_blank" rel="noopener">
+                  <i class="fa fa-external-link"></i> 官网
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-grid hidden-projects">
+            <div class="project-card">
+              <div class="project-header">
+                <img src="/img/winnew-icon.png" alt="WinNew图标" class="project-icon">
+                <div>
+                  <h3 class="project-title">WinNew</h3>
+                  <div class="project-badges">
+                    <span class="group-badge badge-info">Windows</span>
+                    <span class="group-badge badge-success">开源</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <p>从微软服务器获取最新的Windows镜像，提供便捷的系统镜像下载筛选和直链获取服务。</p>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/VirtualHotBar/WinNew_Web" class="project-link" target="_blank" rel="noopener">
+                  <i class="fa fa-github"></i> 代码仓库
+                </a>
+                <a href="https://winnew.cn/" class="project-link" target="_blank" rel="noopener">
+                  <i class="fa fa-external-link"></i> 官网
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-controls">
+            <button class="toggle-btn" id="toggleProjects">
+              查看更多项目 <i class="fa fa-chevron-down"></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="contact-section">
+          <h3>合作咨询</h3>
+          <p>无论您是企业用户还是个人开发者，我们都能为您提供专业的定制服务。如果你有意愿定制软件，或者有其他问题，都可以联系我们。</p>
+          <a href="/docs/serve/custom.html" class="btn btn-primary"><i class="fa fa-envelope"></i> 联系我们</a>
+        </section>
       </div>
+    </section>
+  </main>
 
-
-      <div class="container projects-section">
-        <div class="section-title">
-          <h2>项目案例</h2>
-          <p>以下是我们的代表性软件项目，部分已在GitHub开源</p>
-        </div>
-
-        <div class="project-grid">
-          <!-- 项目1：HotPE工具箱 -->
-          <div class="project-card animate delay-1">
-            <div class="project-header">
-              <img src="/img/hotpe-icon.png" alt="HotPE图标" class="project-icon">
-              <div>
-                <h3 class="project-title">HotPE工具箱</h3>
-                <div class="project-badges">
-                  <span class="badge os-badge">Windows</span>
-                  <span class="badge opensource-badge">开源</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">功能全面的系统维护工具箱，提供分区管理、系统备份/还原、硬件检测等功能、HPM模块。支持UEFI/BIOS启动和多种启动方式。</p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/VirtualHotBar/HotPEToolBox" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> 代码仓库
-              </a>
-              <a href="https://www.hotpe.top/" class="project-link" target="_blank">
-                <i class="fas  fa-external-link-alt"></i> 官网
-              </a>
-            </div>
-          </div>
-
-          <!-- 项目2：SysRi一键重装 -->
-          <div class="project-card animate delay-2">
-            <div class="project-header">
-              <img src="/img/logo128.png" alt="SysRi图标" class="project-icon">
-              <div>
-                <h3 class="project-title">SysRi一键重装</h3>
-                <div class="project-badges">
-                  <span class="badge os-badge">Windows</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">高效安全的Windows系统一键重装工具，支持多语言、多种网络环境，简化系统安装流程。内置硬件检测和软件中心等功能。</p>
-            </div>
-            <div class="project-footer">
-              <span> </span>
-              <a href="/" class="project-link" target="_blank">
-                <i class="fas  fa-external-link-alt"></i> 官网
-              </a>
-            </div>
-          </div>
-
-          <!-- 项目3：NetMount -->
-          <div class="project-card animate delay-3">
-            <div class="project-header">
-              <img src="/img/nm-icon.svg" alt="NetMount图标" class="project-icon">
-              <div>
-                <h3 class="project-title">NetMount</h3>
-                <div class="project-badges">
-                  <span class="badge os-badge">Windows</span>
-                  <span class="badge os-badge">Linux</span>
-                  <span class="badge os-badge">MacOS</span>
-                  <span class="badge opensource-badge">开源</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">统一管理和挂载云存储设施的工具，支持多种云服务提供商，实现数据集中管理。</p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/VirtualHotBar/NetMount" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> 代码仓库
-              </a>
-              <a href="https://www.netmount.cn/" class="project-link" target="_blank">
-                <i class="fas  fa-external-link-alt"></i> 官网
-              </a>
-            </div>
-          </div>
-
-          <!-- 项目4：WinNew（默认隐藏） -->
-          <div class="project-card animate delay hidden-projects">
-            <div class="project-header">
-              <img src="/img/winnew-icon.png" alt="WinNew图标" class="project-icon">
-              <div>
-                <h3 class="project-title">WinNew</h3>
-                <div class="project-badges">
-                  <span class="badge os-badge">Windows</span>
-                  <span class="badge opensource-badge">开源</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">从微软服务器获取最新的Windows镜像，提供便捷的系统镜像下载筛选和直链获取服务。</p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/VirtualHotBar/WinNew_Web" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> 代码仓库
-              </a>
-              <a href="https://winnew.cn/" class="project-link" target="_blank">
-                <i class="fas  fa-external-link-alt"></i> 官网
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 新增：折叠控制按钮 -->
-        <div class="project-controls">
-          <button class="toggle-btn" id="toggleProjects">
-            查看更多项目
-            <i class="fas fa-chevron-down"></i>
-          </button>
-        </div>
-      </div>
-
-
-      <!-- 合作咨询部分 -->
-      <div class="contact-section animate">
-        <h3>合作咨询</h3>
-        <p>无论您是企业用户还是个人开发者，我们都能为您提供专业的定制服务。如果你有意愿定制软件，或者有其他问题，都可以联系我们。</p>
-        <a href="https://sysri.cn/docs/serve/custom.html" class="btn-primary"><i class="fas fa-envelope"></i> 联系我们</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 页脚 -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-links">
-        <a href="https://blog.hotpe.top/">VirtualHotBar</a>
-        <a href="https://www.netmount.cn/">NetMount</a>
-        <a href="https://www.hotpe.top/">HotPE工具箱</a>
-        <a href="https://sysri.cn/">SysRi一键重装</a>
-        <a href="https://winnew.cn/">WinNew</a>
+      <div class="link-group">
+        <a href="//blog.hotpe.top/" target="_blank" rel="noopener">VirtualHotBar</a>
+        <a href="//www.netmount.cn/" target="_blank" rel="noopener">NetMount</a>
+        <a href="//www.hotpe.top/" target="_blank" rel="noopener">HotPE工具箱</a>
+        <a href="//winnew.cn/" target="_blank" rel="noopener">WinNew</a>
       </div>
       <div class="copyright">
-        <p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">蜀ICP备2023001640号-2</a></p>
-        <p>© 2023-Present <a href="https://blog.hotpe.top/" target="_blank">VirtualHotBar</a></p>
+        <a href="//beian.miit.gov.cn/" target="_blank" rel="noopener">蜀ICP备2023001640号-2</a><br>
+        © 2023-Present <a href="//blog.hotpe.top/" target="_blank" rel="noopener">VirtualHotBar</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    // 滚动动画效果
-    document.addEventListener('DOMContentLoaded', function () {
-      // 检测元素是否在视口中
-      function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.bottom >= 0
-        );
-      }
-
-      // 添加动画类
-      function animateOnScroll() {
-        const elements = document.querySelectorAll('.custom-card, .contact-section');
-        elements.forEach(element => {
-          if (isInViewport(element) && !element.classList.contains('animate')) {
-            element.classList.add('animate');
-          }
-        });
-      }
-
-      // 初始检查
-      animateOnScroll();
-
-      // 滚动时检查
-      window.addEventListener('scroll', animateOnScroll);
-
-
-
-      // 项目折叠/展开功能
-      const toggleBtn = document.getElementById('toggleProjects');
-      const hiddenProjects = document.querySelectorAll('.hidden-projects');
-      
-      toggleBtn.addEventListener('click', function() {
-        hiddenProjects.forEach(project => {
-          project.classList.toggle('hidden-projects');
-        });
-        
-        // 切换按钮文本和样式
-        if (this.classList.contains('expanded')) {
-          this.classList.remove('expanded');
-          this.innerHTML = '查看更多项目 <i class="fas fa-chevron-down"></i>';
-        } else {
-          this.classList.add('expanded');
-          this.innerHTML = '收起项目 <i class="fas fa-chevron-down"></i>';
-        }
-      });
-    });
-  </script>
 </body>
-
 </html>
+
+
