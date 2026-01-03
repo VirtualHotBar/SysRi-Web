@@ -377,6 +377,31 @@
       -webkit-text-fill-color: transparent;
     }
 
+    .hero-typewriter .typewriter-caret {
+      display: inline-block;
+      width: 0.1em;
+      height: 0.9em;
+      margin-left: 0.08em;
+      background: var(--text);
+      opacity: 0.9;
+      border-radius: 2px;
+      transform: translateY(0.08em);
+      animation: typewriter-blink 0.9s steps(1, end) infinite;
+    }
+
+    @keyframes typewriter-blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-typewriter .typewriter-caret {
+        animation: none;
+        opacity: 0;
+      }
+    }
+
     .lede {
       color: var(--muted);
       font-size: 1.08rem;
