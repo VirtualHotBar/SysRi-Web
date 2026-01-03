@@ -172,6 +172,92 @@
       });
     });
 
+    // Hero 标语打字机（仅首页）
+    (() => {
+      const prefixEl = document.getElementById('heroSloganPrefix');
+      const highlightEl = document.getElementById('heroSloganHighlight');
+      if (!prefixEl || !highlightEl) return;
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const slogans = [
+        { prefix: '重装也能很轻松，', highlight: '一键就绪' },
+        { prefix: '纯净无捆绑，', highlight: '装完就走' },
+        { prefix: '三步搞定，', highlight: '稳稳重装' },
+        { prefix: '跟着提示走，', highlight: '新手也能装好' },
+      ];
+
+      const typeDelay = 70;
+      const deleteDelay = 40;
+      const holdDelay = 2200;
+      const switchDelay = 420;
+
+      const setSlogan = (idx) => {
+        const s = slogans[idx] || slogans[0];
+        prefixEl.textContent = s.prefix;
+        highlightEl.textContent = s.highlight;
+      };
+
+      setSlogan(0);
+      if (prefersReducedMotion || slogans.length < 2) return;
+
+      let index = 0;
+      let timerId = 0;
+
+      const schedule = (fn, ms) => {
+        timerId = window.setTimeout(fn, ms);
+      };
+
+      const cleanup = () => {
+        if (timerId) window.clearTimeout(timerId);
+        timerId = 0;
+      };
+
+      window.addEventListener('pagehide', cleanup, { once: true });
+
+      const deleteStep = () => {
+        const h = highlightEl.textContent || '';
+        if (h.length) {
+          highlightEl.textContent = h.slice(0, -1);
+          schedule(deleteStep, deleteDelay);
+          return;
+        }
+
+        const p = prefixEl.textContent || '';
+        if (p.length) {
+          prefixEl.textContent = p.slice(0, -1);
+          schedule(deleteStep, deleteDelay);
+          return;
+        }
+
+        index = (index + 1) % slogans.length;
+        schedule(typePrefixStep, switchDelay);
+      };
+
+      const typePrefixStep = () => {
+        const target = slogans[index].prefix;
+        const current = prefixEl.textContent || '';
+        if (current.length < target.length) {
+          prefixEl.textContent = target.slice(0, current.length + 1);
+          schedule(typePrefixStep, typeDelay);
+          return;
+        }
+        schedule(typeHighlightStep, 120);
+      };
+
+      const typeHighlightStep = () => {
+        const target = slogans[index].highlight;
+        const current = highlightEl.textContent || '';
+        if (current.length < target.length) {
+          highlightEl.textContent = target.slice(0, current.length + 1);
+          schedule(typeHighlightStep, typeDelay);
+          return;
+        }
+        schedule(deleteStep, holdDelay);
+      };
+
+      schedule(deleteStep, holdDelay);
+    })();
+
     // 自定义页项目折叠
     const toggleBtn = document.getElementById('toggleProjects');
     if (toggleBtn) {
