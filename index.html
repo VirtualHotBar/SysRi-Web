@@ -16,24 +16,19 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
   <link rel="icon" href="/favicon.ico">
   <title>SysRi一键重装 - 纯净、快速、好用的 Windows 重装工具</title>
-  <link rel="stylesheet" href="//sc.sysri.cn/npm/font-awesome@4.7.0/css/font-awesome.min.css">
   <link href="//sc.sysri.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <script src="//sc.sysri.cn/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="/css/main.css">
   <script src="/js/main.js" defer></script>
   <script src="//sc.sysri.cn/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="//sc.sysri.cn/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 </head>
 <body class="page-home">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="grid-lines"></div>
-
   <header class="navbar" id="navbar">
     <div class="container">
       <div class="nav-head">
         <a class="brand" href="./">
-          <img src="/img/logo128.png" alt="SysRi Logo" width="44" height="44" decoding="async">
+          <img src="/img/logo128.png" alt="SysRi Logo" width="36" height="36" decoding="async">
           <div class="brand-text">
             <strong>SysRi 一键重装</strong>
             <span>Pure • Smart • Fast</span>
@@ -41,7 +36,7 @@
         </a>
 
         <button class="nav-toggle" id="navToggle" aria-label="展开导航">
-          <i class="fa fa-bars"></i>
+          <i data-lucide="menu"></i>
         </button>
       </div>
 
@@ -53,9 +48,9 @@
           <a class="nav-link" target="_blank" rel="noopener" href="/docs">文档</a>
         </nav>
         <div class="controls">
-          <button class="theme-btn" id="themeToggle" aria-label="切换主题"><i class="fa fa-sun-o"></i></button>
+          <button class="theme-btn" id="themeToggle" aria-label="切换主题"><i data-lucide="sun"></i></button>
           <button class="btn btn-primary nav-download" onclick="downloadAndShowModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')">
-            <i class="fa fa-bolt"></i> 立即下载
+            <i data-lucide="zap"></i> 立即下载
           </button>
         </div>
       </div>
@@ -67,17 +62,17 @@
       <div class="container hero-grid">
         <div class="hero-text" data-animate>
           <div class="pill">
-            <span class="dot live"></span>
+            <span class="dot"></span>
             v1.25.07T
           </div>
-          <h1 class="hero-typewriter"><span id="heroSloganPrefix">重装也能很轻松，</span><span class="grad" id="heroSloganHighlight">一键就绪</span><span class="typewriter-caret" aria-hidden="true"></span></h1>
+          <h1 class="hero-typewriter"><span id="heroSloganPrefix">重装也能很轻松，</span><span class="typewriter-accent" id="heroSloganHighlight">一键就绪</span><span class="typewriter-caret" aria-hidden="true"></span></h1>
           <p class="lede">无捆绑、步骤清晰、兼容性强：下载即用，跟着提示走，轻松把系统装好。</p>
           <div class="cta-group">
             <button class="btn btn-primary" onclick="downloadAndShowModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')">
-              <i class="fa fa-download"></i> 立即下载
+              <i data-lucide="download"></i> 立即下载
             </button>
             <a href="/com-group/" target="_blank" class="btn btn-ghost" rel="noopener">
-              <i class="fa fa-comments"></i> 交流群
+              <i data-lucide="message-circle"></i> 交流群
             </a>
             <a href="/custom" target="_blank" class="btn btn-quiet" rel="noopener">
               软件定制
@@ -87,14 +82,14 @@
 
 
           <div class="micro-highlights">
-            <div class="chip"><i class="fa fa-shield"></i> Win 7/8/10/11/Server</div>
-            <div class="chip"><i class="fa fa-th-large"></i> 家庭版 / 专业版 / 企业版</div>
+            <div class="chip"><i data-lucide="shield"></i> Win 7/8/10/11/Server</div>
+            <div class="chip"><i data-lucide="layout-grid"></i> 家庭版 / 专业版 / 企业版</div>
           </div>
         </div>
         <div class="hero-visual" data-animate>
           <div class="hero-shot">
             <img src="//sc.sysri.cn/i/p/1/686bd0b7b8f43.png" alt="SysRi 界面预览" decoding="async">
-            <div class="floating-badge"><i class="fa fa-check-circle"></i> 下载即用 · 免折腾</div>
+            <div class="floating-badge"><i data-lucide="circle-check"></i> 下载即用 · 免折腾</div>
           </div>
         </div>
       </div>
@@ -108,7 +103,7 @@
         </div>
         <div class="feature-grid">
           <div class="feature-card" data-animate>
-            <div class="icon"><i class="fa fa-shield"></i></div>
+            <div class="icon"><i data-lucide="shield"></i></div>
             <h3>纯净系统，不塞私货</h3>
             <p>来自官方镜像，装完桌面清爽，不被打扰。</p>
             <ul>
@@ -119,7 +114,7 @@
           </div>
 
           <div class="feature-card" data-animate>
-            <div class="icon"><i class="fa fa-usb"></i></div>
+            <div class="icon"><i data-lucide="usb"></i></div>
             <h3>多种启动，都能搞定</h3>
             <p>U 盘 / 移动硬盘都支持，遇到怪硬件也不慌。</p>
             <ul>
@@ -130,7 +125,7 @@
           </div>
 
           <div class="feature-card" data-animate>
-            <div class="icon"><i class="fa fa-history"></i></div>
+            <div class="icon"><i data-lucide="history"></i></div>
             <h3>备份还原，留好后路</h3>
             <p>先保护再动手，重装也安心。</p>
             <ul>
@@ -141,7 +136,7 @@
           </div>
 
           <div class="feature-card" data-animate>
-            <div class="icon"><i class="fa fa-th-large"></i></div>
+            <div class="icon"><i data-lucide="layout-grid"></i></div>
             <h3>软件中心，装机更快</h3>
             <p>常用软件一键选装，少点几下就完成。</p>
             <ul>
@@ -152,7 +147,7 @@
           </div>
 
           <div class="feature-card" data-animate>
-            <div class="icon"><i class="fa fa-bolt"></i></div>
+            <div class="icon"><i data-lucide="zap"></i></div>
             <h3>速度拉满，少等一会</h3>
             <p>流程更顺、并行更快，让进度条跑起来。</p>
             <ul>
@@ -214,7 +209,7 @@
         </div>
 
         <div class="callout" data-animate>
-          <i class="fa fa-lightbulb-o"></i>
+          <i data-lucide="lightbulb"></i>
           小贴士：下载可随时取消并重选；全程多重校验，尽量把风险挡在外面。
           </div>
       </div>
@@ -235,7 +230,7 @@
             </video>
           </div>
           <div class="video-meta">
-            <span><i class="fa fa-play-circle"></i> 全程讲解 · 2x 可倍速</span>
+            <span><i data-lucide="play-circle"></i> 全程讲解 · 2x 可倍速</span>
             <a class="btn btn-ghost" href="/docs/started.html" target="_blank" rel="noopener">阅读图文教程</a>
           </div>
         </div>
@@ -251,7 +246,7 @@
         </div>
         <div class="cta-actions">
           <button class="btn btn-primary" onclick="downloadAndShowModal('//api.hotpe.top/API/SysRi/GoLink?id=dl')">
-            <i class="fa fa-download"></i> 立即下载
+            <i data-lucide="download"></i> 立即下载
           </button>
           <a class="btn btn-ghost" href="/docs/started.html" target="_blank" rel="noopener">
             查看文档

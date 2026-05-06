@@ -53,7 +53,7 @@
 (() => {
   const html = document.documentElement;
   const themeModes = ['light', 'dark', 'system'];
-  const themeIcons = { light: 'fa-sun-o', dark: 'fa-moon-o', system: 'fa-desktop' };
+  const themeIcons = { light: 'sun', dark: 'moon', system: 'monitor' };
 
   function safeGet(key) {
     try {
@@ -79,7 +79,8 @@
     const toggle = document.getElementById('themeToggle');
     if (!toggle) return;
     const icon = themeIcons[resolved] || themeIcons.system;
-    toggle.innerHTML = `<i class="fa ${icon}"></i>`;
+    toggle.innerHTML = `<i data-lucide="${icon}"></i>`;
+    if (window.lucide) window.lucide.createIcons();
     toggle.setAttribute(
       'aria-label',
       `当前主题：${resolved === 'system' ? '跟随系统' : resolved === 'dark' ? '深色' : '浅色'}`
@@ -149,13 +150,15 @@
       navToggle.addEventListener('click', () => {
         navbar.classList.toggle('navbar--open');
         navToggle.innerHTML = navbar.classList.contains('navbar--open')
-          ? '<i class="fa fa-times"></i>'
-          : '<i class="fa fa-bars"></i>';
+          ? '<i data-lucide="x"></i>'
+          : '<i data-lucide="menu"></i>';
+        if (window.lucide) window.lucide.createIcons();
       });
       document.querySelectorAll('.nav-link').forEach((link) => {
         link.addEventListener('click', () => {
           navbar.classList.remove('navbar--open');
-          navToggle.innerHTML = '<i class="fa fa-bars"></i>';
+          navToggle.innerHTML = '<i data-lucide="menu"></i>';
+          if (window.lucide) window.lucide.createIcons();
         });
       });
     }
@@ -268,8 +271,9 @@
           hiddenProjectsWrap.classList.toggle('is-visible', isExpanded);
         }
         toggleBtn.innerHTML = isExpanded
-          ? '收起项目 <i class="fa fa-chevron-up"></i>'
-          : '查看更多项目 <i class="fa fa-chevron-down"></i>';
+          ? '收起项目 <i data-lucide="chevron-up"></i>'
+          : '查看更多项目 <i data-lucide="chevron-down"></i>';
+        if (window.lucide) window.lucide.createIcons();
       });
     }
 
@@ -291,15 +295,6 @@
           },
         });
       });
-
-      window.gsap.from('.hero-visual .layer-card', {
-        y: 24,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.12,
-        delay: 0.2,
-      });
     }
 
     // 鼠标倾斜互动（精细指针 + 非减少动效）
@@ -320,5 +315,8 @@
         heroShot.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
       });
     }
+
+    // Lucide Icons
+    if (window.lucide) window.lucide.createIcons();
   });
 })();
